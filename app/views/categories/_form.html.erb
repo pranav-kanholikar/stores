@@ -21,7 +21,21 @@
     <%= form.text_field :color, id: :category_color %>
   </div>
 
+  <%= form.fields_for :variation do |f| %>
+    
+  <div class="field">
+   V color: <%= f.label :color %>
+    <%= f.text_field :color, id: :product_price %>
+  </div>
+
+  <div class="field">
+   V material: <%= f.label :address %>
+    <%= f.text_field :material, id: :product_price %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
+  <% end %>
+
 <% end %>

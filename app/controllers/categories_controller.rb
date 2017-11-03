@@ -15,6 +15,8 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Categorie.new
+    test = @category.variations.build
+    
   end
 
   # GET /categories/1/edit
@@ -69,6 +71,9 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:material, :color)
+      puts params.inspect
+      params.require(:categorie).permit(:material, :color,
+       variations_attributes: [ :color, :material ])
+     
     end
 end
